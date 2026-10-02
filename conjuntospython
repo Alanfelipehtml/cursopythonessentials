@@ -1,1 +1,16 @@
 
+skills = {'Python', 'SQL', 'git', 'Linux'}
+print(skills)
+try:
+    skills.add(['powerpoint', 'blender'])
+except TypeError:
+    print("Uma lista não pode ser add em um set")
+except:
+    print("error não identificado")
+graphic =
+{'Photoshop', 'InDesign', 'Acrobat'}
+graphic.add('Illustrator')
+
+graphic.remove('Acrobat')
+
+graphic.discard('Premiere')
