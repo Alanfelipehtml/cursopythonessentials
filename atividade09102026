@@ -1,0 +1,24 @@
+pedidos = [
+    {'id': 1, 'cliente': 'David', 'total': 300.0, 'status': 'pago'},
+    {'id': 2, 'cliente': 'Igor Ramon', 'total': 200.0, 'status': 'pendente'},
+    {'id': 3, 'cliente': 'Natanael', 'total': 700.0, 'status': 'pago'},
+    {'id': 4, 'cliente': 'Renan', 'total': 500.0, 'status': 'cancelado'},
+]
+
+
+pagos = [p for p in pedidos if p['status'] == 'pago']
+faturamento = sum(p['total'] for p in pagos)
+
+
+quantidade_por_status = {}
+for p in pedidos:
+    status = p['status']
+    quantidade_por_status[status] = quantidade_por_status.get(status, 0) + 1
+
+
+maior_pedido = max(pagos, key=lambda p: p['total'])
+cliente_maior = maior_pedido['cliente']
+
+print("Faturamento (pagos):", faturamento)
+print("Quantidade por status:", quantidade_por_status)
+print("Cliente do maior pedido pago:", cliente_maior)
